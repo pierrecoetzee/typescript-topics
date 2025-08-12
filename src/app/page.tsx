@@ -1,103 +1,103 @@
-import Image from "next/image";
+import Link from 'next/link';
+import {topicContent, TopicData, TopicSlug} from "@/app/lib/const";
+
+const colorClasses = {
+  blue: {
+    border: 'border-blue-200',
+    bg: 'bg-blue-50',
+    text: 'text-blue-900',
+    link: 'text-blue-600 hover:text-blue-800'
+  },
+  green: {
+    border: 'border-green-200',
+    bg: 'bg-green-50',
+    text: 'text-green-900',
+    link: 'text-green-600 hover:text-green-800'
+  },
+  purple: {
+    border: 'border-purple-200',
+    bg: 'bg-purple-50',
+    text: 'text-purple-900',
+    link: 'text-purple-600 hover:text-purple-800'
+  },
+  orange: {
+    border: 'border-orange-200',
+    bg: 'bg-orange-50',
+    text: 'text-orange-900',
+    link: 'text-orange-600 hover:text-orange-800'
+  }
+};
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-8">Welcome to Our Interview Preparation Site</h1>
+      <p className="text-lg text-gray-600 mb-8">
+        Explore our comprehensive collection of TypeScript topics and interview questions.
+      </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Overview TypeScript Card */}
+      <div className="mb-8">
+        <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow bg-gray-50">
+          <h2 className="text-2xl font-semibold mb-3 text-gray-900">TypeScript Overview</h2>
+          <p className="text-gray-600 mb-4">
+            Master TypeScript fundamentals including generics, interfaces, utility types, and advanced type patterns.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Individual Topic Cards */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-6 text-gray-900">Individual Topics</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {(Object.entries(topicContent) as [TopicSlug, TopicData][]).map(([slug, topic]: [TopicSlug, TopicData])  => {
+            const colors = colorClasses[topic.color as keyof typeof colorClasses];
+
+            return (
+              <div
+                key={slug}
+                className={`border ${colors.border} ${colors.bg} rounded-lg p-6 hover:shadow-md transition-shadow`}
+              >
+                <h3 className={`text-xl font-semibold mb-3 ${colors.text}`}>
+                  {topic.title}
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  {topic.description}
+                </p>
+                <Link
+                  href={`/typescript/${slug}`}
+                  className={`${colors.link} font-medium hover:underline`}
+                >
+                  Learn {topic.title} →
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="bg-white border border-gray-200 rounded-lg p-6">
+        <h2 className="text-xl font-semibold mb-4 text-gray-900">What You'll Learn</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div className="p-4">
+            <div className="text-2xl font-bold text-blue-600 mb-2">4</div>
+            <div className="text-sm text-gray-600">Core Topics</div>
+          </div>
+          <div className="p-4">
+            <div className="text-2xl font-bold text-green-600 mb-2">20+</div>
+            <div className="text-sm text-gray-600">Code Examples</div>
+          </div>
+          <div className="p-4">
+            <div className="text-2xl font-bold text-purple-600 mb-2">15+</div>
+            <div className="text-sm text-gray-600">Utility Types</div>
+          </div>
+          <div className="p-4">
+            <div className="text-2xl font-bold text-orange-600 mb-2">∞</div>
+            <div className="text-sm text-gray-600">Practice</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
