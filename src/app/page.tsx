@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* Quick Stats */}
       <div className="bg-white border border-gray-200 rounded-lg p-6">
-        <h2 className="text-xl font-semibold mb-4 text-gray-900">What You'll Learn</h2>
+        <h2 className="text-xl font-semibold mb-4 text-gray-900">What You&apos;ll Learn</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div className="p-4">
             <div className="text-2xl font-bold text-blue-600 mb-2">4</div>

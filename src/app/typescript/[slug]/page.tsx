@@ -12,7 +12,7 @@ export default async function TypeScriptSlugPage({ params }: TypeScriptSlugProps
     return (
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-4 text-gray-900">Topic Not Found</h1>
-        <p className="text-gray-600">The TypeScript topic "{slug}" doesn't exist.</p>
+        <p className="text-gray-600">The TypeScript topic &quot;{slug}&quot; doesn&apos;t exist.</p>
       </div>
     );
   }
@@ -24,7 +24,7 @@ export default async function TypeScriptSlugPage({ params }: TypeScriptSlugProps
 
       <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mb-6">
         <p className="text-sm text-gray-600">
-          You're viewing: <code className="bg-white border px-2 py-1 rounded text-gray-800 font-mono">/typescript/{slug}</code>
+          You&apos;re viewing: <code className="bg-white border px-2 py-1 rounded text-gray-800 font-mono">/typescript/{slug}</code>
         </p>
       </div>
 
