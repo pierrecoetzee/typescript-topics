@@ -20,7 +20,7 @@ export default async function TypeScriptSlugPage({ params }: TypeScriptSlugProps
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-4 text-gray-900">{topic.title}</h1>
-      <p className="text-lg font-bold mb-6 text-yellow-700">{topic.content}</p>
+      <p className="text-lg mb-6 text-gray-700">{topic.content}</p>
 
       <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mb-6">
         <p className="text-sm text-gray-600">

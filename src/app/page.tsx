@@ -31,8 +31,8 @@ const colorClasses = {
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Welcome to Our Interview Preparation Site</h1>
-      <p className="text-lg text-gray-600 mb-8">
+      <h1 className="text-4xl font-bold mb-8">Welcome to my TypeScript exploration site...</h1>
+      <p className="text-lg text-white-600 mb-8">
         Explore our comprehensive collection of TypeScript topics and interview questions.
       </p>
 
@@ -82,19 +82,19 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div className="p-4">
             <div className="text-2xl font-bold text-blue-600 mb-2">4</div>
-            <div className="text-sm text-gray-600">Core Topics</div>
+            <div className="text-sm text-blue-600">Core Topics</div>
           </div>
           <div className="p-4">
             <div className="text-2xl font-bold text-green-600 mb-2">20+</div>
-            <div className="text-sm text-gray-600">Code Examples</div>
+            <div className="text-sm text-green-600">Code Examples</div>
           </div>
           <div className="p-4">
             <div className="text-2xl font-bold text-purple-600 mb-2">15+</div>
-            <div className="text-sm text-gray-600">Utility Types</div>
+            <div className="text-sm text-purple-600">Utility Types</div>
           </div>
           <div className="p-4">
             <div className="text-2xl font-bold text-orange-600 mb-2">∞</div>
-            <div className="text-sm text-gray-600">Practice</div>
+            <div className="text-sm text-orange-600">Practice</div>
           </div>
         </div>
       </div>
